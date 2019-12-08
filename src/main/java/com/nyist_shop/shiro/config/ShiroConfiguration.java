@@ -69,8 +69,6 @@ public class ShiroConfiguration {
         filterMap.put("/login","anon");
         filterMap.put("/static/**", "anon");
         filterMap.put("/getCode", "anon");
-//        filterMap.put("/user.html", "authc");
-//        filterMap.put("/admin.html", "authc");
         filterMap.put("/user.html", "roles[user]");
         filterMap.put("/admin.html", "roles[admin]");
         filterMap.put("/logout", "logout");
@@ -80,8 +78,6 @@ public class ShiroConfiguration {
         filterFactory.setFilterChainDefinitionMap(filterMap);
         return filterFactory;
     }
-
-
     //配置shiro注解支持
     @Bean
     public AuthorizationAttributeSourceAdvisor authorizationAttributeSourceAdvisor(SecurityManager securityManager) {
