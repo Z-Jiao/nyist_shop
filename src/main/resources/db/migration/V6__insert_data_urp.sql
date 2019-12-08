@@ -1,0 +1,11 @@
+INSERT INTO `user_role` VALUES ('1', '1715925168');
+INSERT INTO `user_role` VALUES ('2', '1815925168');
+INSERT INTO `user_role` VALUES ('3', '1915925168');
+INSERT INTO `user_role` VALUES ('3', '1915925190');
+INSERT INTO `user_role` VALUES ('3', '1915925280');
+INSERT INTO `role_power` VALUES ('1', '1');
+INSERT INTO `role_power` VALUES ('1', '2');
+INSERT INTO `role_power` VALUES ('1', '3');
+INSERT INTO `role_power` VALUES ('2', '1');
+INSERT INTO `role_power` VALUES ('2', '3');
+INSERT INTO `role_power` VALUES ('3', '3');

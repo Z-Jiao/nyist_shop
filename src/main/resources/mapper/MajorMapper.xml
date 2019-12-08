@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nyist_shop.user.mapper.MajorMapper">
+    <resultMap id="MajorMapper" type="com.nyist_shop.user.domian.Major">
+        <id column="major_id" property="majorId"/>
+        <result column="college_id" property="collegeId"/>
+        <result column="major_name" property="majorName"/>
+        <collection property="users" javaType="com.nyist_shop.user.domian.User">
+            <id column="id" property="id"/>
+            <result column="name" property="name"/>
+            <result column="work_id" property="workId"/>
+            <result column="password" property="password"/>
+            <result column="sex" property="sex"/>
+            <result column="age" property="age"/>
+            <result column="number" property="number"/>
+            <result column="major_id" property="majorId"/>
+            <result column="email" property="email"/>
+            <result column="avatar" property="avatar"/>
+            <result column="out_time" property="outTime"/>
+            <result column="create_time" property="createTime"/>
+            <result column="state" property="state"/>
+        </collection>
+    </resultMap>
+    <select id="findMajorIdByName" parameterType="String">
+select major_id from t_major where major_name=#{majorName}
+</select>
+
+</mapper>
