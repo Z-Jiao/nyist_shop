@@ -14,6 +14,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.imageio.ImageIO;
@@ -32,13 +33,21 @@ public class LoginController {
      */
     private String SHIRO_VERIFY_SESSION = "verifySessionCode";
 
+    @RequestMapping("/admin")
+    public String admin() {
+        return "admin";
+    }
+    @RequestMapping("/user")
+    public String user() {
+        return "user";
+    }
 
     @Autowired
     private DefaultKaptcha defaultKaptcha;
 
-    @GetMapping("/unauthorized")
+    @RequestMapping("/unauthorized")
     public String unauthorized() {
-        return "/unauthorized";
+        return "unauthorized";
     }
 
     @GetMapping({"/", "/login"})
@@ -46,10 +55,10 @@ public class LoginController {
         return "/login";
     }
 
-    @GetMapping("/403")
-    public String page_403() {
-        return "403";
-    }
+//    @GetMapping("/403")
+//    public String page_403() {
+//        return "403";
+//    }
 
     @ApiModelProperty(name = "登录接口")
     @PostMapping("/login")

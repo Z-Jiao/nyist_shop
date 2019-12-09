@@ -9,7 +9,6 @@ import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import org.apache.shiro.crypto.hash.Md5Hash;
 import org.springframework.beans.factory.annotation.Autowired;
-
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -20,6 +19,8 @@ public class UserController {
     @Autowired
     private UserService userService;
     static Time time = new Time();
+
+
 
     /**
      * 更改用户信息根据工号或者学号
@@ -77,7 +78,7 @@ public class UserController {
      */
     @PostMapping(value = "/user/addUser")
     @ApiOperation("添加用户")
-    public void addUser(@ApiParam("JSON格式的用户信息")@RequestBody User user) {
+    public void addUser(@ApiParam("JSON格式的用户信息") @RequestBody User user) {
         String createTime = time.getTime();
         String workId = user.getWorkId();
         String password = user.getPassword();

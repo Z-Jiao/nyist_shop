@@ -13,7 +13,7 @@
 </select>
 
     <select id="findOneRoleByRoleId" parameterType="String" resultMap="RoleMapper">
-        select role_name from role where role_id = (select role_id from user_role where work_id =#{workId})
+        select * from role where role_id = (select role_id from user_role where work_id =#{workId})
     </select>
     <!--   <insert id="addRole" parameterType="RoleMapper">
            insert into role w

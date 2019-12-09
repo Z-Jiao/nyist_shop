@@ -4,11 +4,13 @@ import com.nyist_shop.user.domian.Role;
 import com.nyist_shop.user.mapper.RoleMapper;
 import com.nyist_shop.user.service.RoleService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Set;
 
 
+@Service
 public class RoleServiceImpl implements RoleService {
     @Autowired
     private RoleMapper roleMapper;
@@ -19,7 +21,7 @@ public class RoleServiceImpl implements RoleService {
     }
 
     @Override
-    public String findOneRoleByRoleId(String roleid) {
+    public Role findOneRoleByRoleId(String roleid) {
         return roleMapper.findOneRoleByRoleId(roleid);
     }
 

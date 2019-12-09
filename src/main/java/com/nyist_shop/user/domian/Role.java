@@ -8,6 +8,7 @@ import lombok.Data;
 public class Role {
     private String roleId;
     private String roleName;
+    private String roleDescription;
     private String createTime;
     private String updateTime;
 

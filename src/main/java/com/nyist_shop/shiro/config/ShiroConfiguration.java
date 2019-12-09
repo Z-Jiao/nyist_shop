@@ -66,11 +66,19 @@ public class ShiroConfiguration {
          */
         Map<String, String> filterMap = new LinkedHashMap<String, String>();
         // 配置不会被拦截的链接 顺序判断
+        /**
+         * user：如果使用rememberMe的功能才可以直接访问
+         * perms：该资源必须得到资源权限才可以访问
+         * role：给资源必须得到角色权限才可以访问
+         */
         filterMap.put("/login","anon");
-        filterMap.put("/static/**", "anon");
+        filterMap.put("/css/**", "anon");
+        filterMap.put("/fonts/**", "anon");
+        filterMap.put("/js/**", "anon");
+        filterMap.put("/img/**", "anon");
         filterMap.put("/getCode", "anon");
-        filterMap.put("/user.html", "roles[user]");
-        filterMap.put("/admin.html", "roles[admin]");
+        filterMap.put("/user", "perms[user:add]");
+        filterMap.put("/admin", "perms[user:del]");
         filterMap.put("/logout", "logout");
         filterMap.put("/swagger-ui.html", "anon");
         filterMap.put("/**", "authc");
